@@ -14,15 +14,11 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
-        // historyApiFallback: true,
         hot: true,
-        host: '0.0.0.0',
+        host: 'localhost',
         port: 3000,
         disableHostCheck: true,
         contentBase: path.resolve(__dirname, 'dist')
-    },
-    externals: {
-        config: JSON.stringify(require('./config.json')),
     },
     plugins: [
         new CleanWebpackPlugin(['dist'], {exclude: ['index.html']}),

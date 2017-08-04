@@ -1,14 +1,10 @@
-import React, {Component} from 'react';
-
-import logo from '../images/logo.png';
-import logoNegativa from '../images/logo-negative.png';
-import sidebarBackground from '../images/sidebar-background.jpg';
-import menuData from './menu.json';
-
-import MenuItem from './menu-item';
-import Submenu from './submenu';
-
-import MyRoutes from "./my-routes";
+import React, {Component} from "react";
+import logo from "../images/logo.png";
+import logoNegativa from "../images/logo-negative.png";
+import sidebarBackground from "../images/sidebar-background.jpg";
+import menuData from "./menu.json";
+import MenuItem from "./menu-item";
+import Submenu from "./submenu";
 
 class MenuDrawer extends Component {
 
@@ -25,11 +21,11 @@ class MenuDrawer extends Component {
         let menuList = this.createMenuList(menuData);
         let email = 'sac@bytecominformatica.com.br';
         let name = 'Bytecom Informática';
-        let image = {logo};
+        let image = <img className="circle white" src={logo} width="20px"/>;
         if (this.props.user) {
             email = this.props.user.email;
             name = this.props.user.displayName;
-            image = this.props.user.photoURL;
+            image = <img className="circle white" src={this.props.user.photoURL} width="20px"/>;
         }
 
         return (
@@ -40,13 +36,13 @@ class MenuDrawer extends Component {
                             <div className="background center">
                                 <img src={sidebarBackground}/>
                             </div>
-                            <img className="circle white" src={image} width="20px"/>
+                            {image}
                             <span className="white-text name">{name}</span>
                             <span className="white-text email">{email}</span>
                         </div>
                     </li>
                     <li>
-                        <a href="/#login">
+                        <a href="/#login" onClick={close}>
                             Login
                         </a>
                     </li>
@@ -63,10 +59,8 @@ class MenuDrawer extends Component {
                         </a>
                     </div>
                 </nav>
-                <MyRoutes/>
             </div>
-        )
-            ;
+        );
     }
 
     createMenuList(menuList, parentKey) {

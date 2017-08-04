@@ -79,5 +79,10 @@
     "icon": "fa fa-github",
     "url": "https://github.com/bytecominformatica/sicoba/issues",
     "target": "_blank"
+  },
+  {
+    "name": "Sair",
+    "icon": "fa fa-sign-out",
+    "url": "/logout"
   }
 ]

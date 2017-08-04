@@ -1,3 +1,6 @@
 dist/assets
 .idea/
 node_modules/
+/config
+!/config/main.js
+*.log

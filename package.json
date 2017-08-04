@@ -8,6 +8,7 @@
     "jquery": "3.2.1",
     "materialize-css": "0.99.0",
     "react": "^15.5.4",
+    "react-block-ui": "^1.0.0",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.1"
@@ -27,14 +28,17 @@
     "style-loader": "^0.18.2",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.5.1",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "lodash": "^4.17.4",
+    "yargs": "^8.0.2"
   },
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --colors",
     "build:dev": "webpack --colors",
-    "build:dist": "webpack --config webpack.prod.js --colors",
+    "build:prod": "webpack --config webpack.prod.js --colors",
+    "build:quality": "webpack --config webpack.quality.js --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "clairtonluz",

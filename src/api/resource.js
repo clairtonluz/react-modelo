@@ -1,11 +1,12 @@
 import HttpError from "./http-error";
 import Toast from '../helpers/toast';
-import config from 'config';
+// import config from 'config';
 
 class Resource {
 
     fetch(url, requestConfig) {
-        let fullUrl = config.apiRoot + url;
+        let fullUrl = '';
+            // config.apiRoot + url;
         return this.fetchExternal(fullUrl, requestConfig);
     }
 
