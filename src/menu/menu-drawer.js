@@ -23,6 +23,14 @@ class MenuDrawer extends Component {
 
     render() {
         let menuList = this.createMenuList(menuData);
+        let email = 'sac@bytecominformatica.com.br';
+        let name = 'Bytecom Informática';
+        let image = {logo};
+        if (this.props.user) {
+            email = this.props.user.email;
+            name = this.props.user.displayName;
+            image = this.props.user.photoURL;
+        }
 
         return (
             <div>
@@ -32,9 +40,9 @@ class MenuDrawer extends Component {
                             <div className="background center">
                                 <img src={sidebarBackground}/>
                             </div>
-                            <img className="circle white" src={logo} width="20px"/>
-                            <span className="white-text name">Bytecom Informática</span>
-                            <span className="white-text email">sac@bytecominformatica.com.br</span>
+                            <img className="circle white" src={image} width="20px"/>
+                            <span className="white-text name">{name}</span>
+                            <span className="white-text email">{email}</span>
                         </div>
                     </li>
                     <li>
@@ -57,7 +65,8 @@ class MenuDrawer extends Component {
                 </nav>
                 <MyRoutes/>
             </div>
-        );
+        )
+            ;
     }
 
     createMenuList(menuList, parentKey) {

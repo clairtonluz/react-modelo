@@ -1,3 +1,11 @@
 {
-  "apiRoot": "http://localhost:8080/api"
+  "apiRoot": "http://localhost:8080/api",
+  "firebase": {
+    "apiKey": "",
+    "authDomain": "",
+    "databaseURL": "",
+    "projectId": "",
+    "storageBucket": "",
+    "messagingSenderId": ""
+  }
 }

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "firebase": "^4.2.0",
     "font-awesome": "^4.7.0",
     "jquery": "3.2.1",
     "materialize-css": "0.99.0",

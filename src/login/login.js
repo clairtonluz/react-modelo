@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import background from '../images/sidebar-background.jpg';
 import LoginResource from './login-resource';
 import Toast from "../helpers/toast";
+import firebase from 'firebase'
 
 class Login extends Component {
     constructor(props) {
@@ -26,40 +27,15 @@ class Login extends Component {
         });
     }
 
-    required(inputs) {
-        let invalids = []
-        for (let key in inputs) {
-            let value = inputs[key];
-            if (!value || !value.trim().length) {
-                invalids.push(key);
-            }
-        }
-        return invalids;
-    }
-
     attemptLogin(event) {
         event.preventDefault();
-        var inputs = $( "form" ).find('input');
-        inputs.each((input)=>{
-
-            console.log(input);
-            console.log(input.isValid());
+        firebase.auth().signInWithEmailAndPassword(this.state.username, this.state.password).catch(function (error) {
+            // Handle Errors here.
+            Toast.show(error.message);
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
         });
-        // let invalids = this.required({
-        //     username: this.state.username,
-        //     password: this.state.password
-        // })
-        // if (invalids.length) {
-        //     Toast.info("Campo(s) obrigatorio(s): " + JSON.stringify(invalids));
-        // } else {
-        //     console.log(invalids);
-        //     new LoginResource().login(this.state.username, this.state.password)
-        //         .then((data) => {
-        //             console.log('resul');
-        //             console.log(data);
-        //         });
-        //
-        // }
     }
 
     render() {

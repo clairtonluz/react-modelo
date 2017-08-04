@@ -34,10 +34,10 @@ class Resource {
                     message = 'Ocorreu uma falha:' + JSON.stringify(responseError);
                 }
 
-                Toast.info(message);
+                Toast.show(message);
             });
         } else {
-            Toast.info('Ocorreu um problema inesperado: ' + error.message);
+            Toast.show('Ocorreu um problema inesperado: ' + error.message);
         }
         throw error;
     }
