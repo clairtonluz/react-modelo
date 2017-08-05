@@ -84,5 +84,10 @@
     "name": "Sair",
     "icon": "fa fa-sign-out",
     "url": "/logout"
+  },
+  {
+    "name": "Login",
+    "icon": "fa fa-sign-in",
+    "url": "/login"
   }
 ]

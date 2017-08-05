@@ -41,6 +41,7 @@ class MyRoutes extends Component {
                     <NoAuthRoute path="/login" component={Login}/>
                     <AuthRoute path="/logout" component={Logout}/>
                     <AuthRoute path="/clientes" component={NotFound}/>
+                    <AuthRoute path="/planos" component={NotFound}/>
                     <Route component={NotFound}/>
                 </Switch>
             </div>

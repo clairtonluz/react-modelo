@@ -41,11 +41,6 @@ class MenuDrawer extends Component {
                             <span className="white-text email">{email}</span>
                         </div>
                     </li>
-                    <li>
-                        <a href="/#login" onClick={close}>
-                            Login
-                        </a>
-                    </li>
                     {menuList}
                 </ul>
 

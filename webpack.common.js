@@ -14,6 +14,7 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
+        historyApiFallback: true,
         hot: true,
         host: 'localhost',
         port: 3000,
@@ -21,7 +22,7 @@ module.exports = {
         contentBase: path.resolve(__dirname, 'dist')
     },
     plugins: [
-        new CleanWebpackPlugin(['dist'], {exclude: ['index.html']}),
+        new CleanWebpackPlugin(['dist'], {exclude: ['index.html', 'favicon.ico']}),
         new CopyWebpackPlugin([
             {from: './node_modules/font-awesome/css/font-awesome.min.css', to: 'assets/css'},
             {from: './node_modules/materialize-css/dist/css/materialize.min.css', to: 'assets/css'},
