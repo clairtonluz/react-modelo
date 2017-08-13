@@ -9,21 +9,21 @@ class Submenu extends Component {
 
     render() {
         let icon = this.props.icon ? <i className={this.props.icon}></i> : '';
-        let identifier = this.props.name.toLowerCase().split(' ').join('-');
+        // let identifier = this.props.name.toLowerCase().split(' ').join('-');
 
         return (
-            <ul>
-                <li>
-                    <a className="dropdown-button" data-activates={identifier}>
-                        {icon}
-                        {this.props.name}
-                        <i className="material-icons right">arrow_drop_down</i>
-                    </a>
-                </li>
-                <ul id={identifier} className='dropdown-content'>
-                    {this.props.menuList}
-                </ul>
-            </ul>
+            <li>
+                <a className="collapsible-header">
+                    {icon}
+                    {this.props.name}
+                    <i className="material-icons right">arrow_drop_down</i>
+                </a>
+                <div className="collapsible-body">
+                    <ul>
+                        {this.props.menuList}
+                    </ul>
+                </div>
+            </li>
         );
     }
 }

@@ -68,8 +68,8 @@ class Login extends Component {
                                 <div className="card-content">
                                     <div className="input-field">
                                         <i className="fa fa-user-circle prefix"/>
-                                        <input name="email" id="email"
-                                               type="email" value={this.state.email}
+                                        <input name="email" id="email" type="email"
+                                               value={this.state.email}
                                                onChange={this.handleInputChange}/>
                                         <label htmlFor="email">Email</label>
                                     </div>
@@ -81,7 +81,7 @@ class Login extends Component {
                                                 <input name="password" id="password" type="password"
                                                        value={this.state.password}
                                                        onChange={this.handleInputChange}/>
-                                                <label htmlFor="password">Senha</label>
+                                                <label className="active" htmlFor="password">Senha</label>
                                             </div>
                                         </div>
                                         <div className="col s12 m4 l3">

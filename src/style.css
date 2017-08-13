@@ -26,3 +26,7 @@ code {
 .submenu-item {
     background: #e6f2ff;
 }
+
+.collapsible-header i {
+    font-size: inherit;
+}

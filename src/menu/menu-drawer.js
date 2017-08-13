@@ -14,20 +14,14 @@ class MenuDrawer extends Component {
     }
 
     componentDidMount() {
+        console.log('teste');
         $(".button-collapse").sideNav({closeOnClick: false});
+        $('.dropdown-button').dropdown();
+        $('.collapsible').collapsible();
     }
 
     render() {
-        let menuList = this.createMenuList(menuData);
-        let email = 'sac@bytecominformatica.com.br';
-        let name = 'Bytecom Informática';
-        let image = <img className="circle white" src={logo} width="20px"/>;
-        if (this.props.user) {
-            email = this.props.user.email;
-            name = this.props.user.displayName;
-            image = <img className="circle white" src={this.props.user.photoURL} width="20px"/>;
-        }
-
+        const menuList = this.createMenuList(menuData);
         return (
             <div>
                 <ul id="slide-out" className="side-nav">
@@ -36,12 +30,16 @@ class MenuDrawer extends Component {
                             <div className="background center">
                                 <img src={sidebarBackground}/>
                             </div>
-                            {image}
-                            <span className="white-text name">{name}</span>
-                            <span className="white-text email">{email}</span>
+                            <img className="circle white" src={this.props.user.photoURL} width="20px"/>
+                            <span className="white-text name">{this.props.user.name}</span>
+                            <span className="white-text email">{this.props.user.email}</span>
                         </div>
                     </li>
-                    {menuList}
+                    <li className="no-padding">
+                        <ul className="collapsible collapsible-accordion">
+                            {menuList}
+                        </ul>
+                    </li>
                 </ul>
 
                 <nav>
