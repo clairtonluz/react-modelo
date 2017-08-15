@@ -4,12 +4,12 @@
   "description": "Bytecom informática, seu provedor de internet.",
   "icons": [
     {
-      "src": "./images/icons/logo-192x192.png",
+      "src": "./logo-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "./images/icons/logo-512x512.png",
+      "src": "./logo-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

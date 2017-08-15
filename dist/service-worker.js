@@ -3,6 +3,8 @@ var filesToCache = [
     '/',
     '/index.html',
     '/favicon.ico',
+    '/logo-192x192.png',
+    '/logo-512x512.png',
     '/assets/css/materialize.min.css',
     '/assets/css/font-awesome.min.css',
     '/assets/fonts/roboto/Roboto-Regular.woff2',

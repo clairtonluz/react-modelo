@@ -24,9 +24,12 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist'], {
             exclude: [
-                'index.html', 'favicon.ico', 'manifest.json', 'service-worker.js',
-                'assets/images/logo-192x192.png',
-                'assets/images/logo-512x512.png'
+                'index.html',
+                'favicon.ico',
+                'manifest.json',
+                'service-worker.js',
+                'logo-192x192.png',
+                'logo-512x512.png'
             ]
         }),
         new CopyWebpackPlugin([
@@ -46,7 +49,7 @@ module.exports = {
             {
                 test: /\.(jpg|png|gif|svg)$/,
                 exclude: /node_modules/,
-                use: 'file-loader?limit=100000&name=./assets/images/[name].[ext]'
+                use: 'file-loader?limit=100000&name=./assets/images/[hash].[ext]'
             },
             {
                 test: /\.(woff|woff2|eot|ttf|svg)$/,
