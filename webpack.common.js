@@ -22,7 +22,13 @@ module.exports = {
         contentBase: path.resolve(__dirname, 'dist')
     },
     plugins: [
-        new CleanWebpackPlugin(['dist'], {exclude: ['index.html', 'favicon.ico']}),
+        new CleanWebpackPlugin(['dist'], {
+            exclude: [
+                'index.html', 'favicon.ico', 'manifest.json', 'service-worker.js',
+                'assets/images/logo-192x192.png',
+                'assets/images/logo-512x512.png'
+            ]
+        }),
         new CopyWebpackPlugin([
             {from: './node_modules/font-awesome/css/font-awesome.min.css', to: 'assets/css'},
             {from: './node_modules/materialize-css/dist/css/materialize.min.css', to: 'assets/css'},
@@ -40,7 +46,7 @@ module.exports = {
             {
                 test: /\.(jpg|png|gif|svg)$/,
                 exclude: /node_modules/,
-                use: 'file-loader?limit=100000&name=./assets/images/[hash].[ext]'
+                use: 'file-loader?limit=100000&name=./assets/images/[name].[ext]'
             },
             {
                 test: /\.(woff|woff2|eot|ttf|svg)$/,

@@ -5,6 +5,7 @@ import firebase from "firebase";
 import './loading.css';
 import {HashRouter} from 'react-router-dom'
 import Login from "./login/login";
+import registerServiceWorker from './registerServiceWorker'
 
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
     }
 
     componentDidMount() {
+        registerServiceWorker();
         const that = this;
         firebase.auth().onAuthStateChanged(user => {
             this.setState({user: user});

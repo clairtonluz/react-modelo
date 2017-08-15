@@ -1,0 +1,28 @@
+{
+  "short_name": "Bytecom",
+  "name": "Bytecom Informática",
+  "description": "Bytecom informática, seu provedor de internet.",
+  "icons": [
+    {
+      "src": "./images/icons/logo-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./images/icons/logo-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "author": {
+    "name": "Clairton Luz",
+    "website": "http://blog.clairtonluz.com.br",
+    "github": "https://github.com/clairtonluz",
+    "source-repo": "https://github.com/bytecominformatica/sicoba-frontend"
+  }
+}
