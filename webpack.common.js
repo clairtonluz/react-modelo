@@ -28,8 +28,14 @@ module.exports = {
                 'favicon.ico',
                 'manifest.json',
                 'service-worker.js',
-                'logo-192x192.png',
-                'logo-512x512.png'
+                'images/icons/icon-72x72.png',
+                'images/icons/icon-96x96.png',
+                'images/icons/icon-128x128.png',
+                'images/icons/icon-144x144.png',
+                'images/icons/icon-152x152.png',
+                'images/icons/icon-192x192.png',
+                'images/icons/icon-384x384.png',
+                'images/icons/icon-512x512.png',
             ]
         }),
         new CopyWebpackPlugin([
@@ -49,7 +55,7 @@ module.exports = {
             {
                 test: /\.(jpg|png|gif|svg)$/,
                 exclude: /node_modules/,
-                use: 'file-loader?limit=100000&name=./assets/images/[hash].[ext]'
+                use: 'file-loader?limit=100000&name=./assets/images/[name].[ext]'
             },
             {
                 test: /\.(woff|woff2|eot|ttf|svg)$/,

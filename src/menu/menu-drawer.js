@@ -14,7 +14,6 @@ class MenuDrawer extends Component {
     }
 
     componentDidMount() {
-        console.log('teste');
         $(".button-collapse").sideNav({closeOnClick: false});
         $('.dropdown-button').dropdown();
         $('.collapsible').collapsible();

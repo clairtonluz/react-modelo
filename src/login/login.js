@@ -3,7 +3,6 @@ import background from "../images/sidebar-background.jpg";
 import Toast from "../helpers/toast";
 import firebase from "firebase";
 import BlockUi from "react-block-ui";
-import {withRouter} from 'react-router-dom'
 
 class Login extends Component {
     constructor(props) {
@@ -40,9 +39,6 @@ class Login extends Component {
             })
             .then(() => {
                 that.setState({blocking: false});
-                withRouter(({history}) => (
-                    history.push('/')
-                ));
             })
             .catch(function (error) {
                 that.setState({blocking: false});

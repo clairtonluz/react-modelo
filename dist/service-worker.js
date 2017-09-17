@@ -3,8 +3,14 @@ var filesToCache = [
     '/',
     '/index.html',
     '/favicon.ico',
-    '/logo-192x192.png',
-    '/logo-512x512.png',
+    'images/icons/icon-72x72.png',
+    'images/icons/icon-96x96.png',
+    'images/icons/icon-128x128.png',
+    'images/icons/icon-144x144.png',
+    'images/icons/icon-152x152.png',
+    'images/icons/icon-192x192.png',
+    'images/icons/icon-384x384.png',
+    'images/icons/icon-512x512.png',
     '/assets/css/materialize.min.css',
     '/assets/css/font-awesome.min.css',
     '/assets/fonts/roboto/Roboto-Regular.woff2',
@@ -12,7 +18,10 @@ var filesToCache = [
     '/assets/js/app.bundle.js',
     '/assets/js/jquery.min.js',
     '/assets/js/materialize.min.js',
-    '/assets/images/sidebar-background.jpg'
+    '/assets/images/logo.png',
+    '/assets/images/logo-negative.png',
+    '/assets/images/erro404.jpg',
+    '/assets/images/sidebar-background.jpg',
 ];
 
 self.addEventListener('install', function(e) {
@@ -41,7 +50,7 @@ self.addEventListener('activate', function(e) {
 });
 
 self.addEventListener('fetch', function(e) {
-    console.log('[ServiceWorker] Fetch', e.request.url);
+    // console.log('[ServiceWorker] Fetch', e.request.url);
     var dataUrl = 'https://meudominio.com.br/api/recurso';
     if (e.request.url.indexOf(dataUrl) > -1) {
         e.respondWith(

@@ -5,13 +5,13 @@ import firebase from "firebase";
 import './loading.css';
 import {HashRouter} from 'react-router-dom'
 import Login from "./login/login";
-import registerServiceWorker from './registerServiceWorker'
-
+import registerServiceWorker from './service-worker/service-worker'
+import pushNotification from './service-worker/push-notification';
 
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {user: null};
+        this.state = {user: undefined};
         firebase.initializeApp(APP_CONFIG.firebase);
     }
 
@@ -25,7 +25,14 @@ class App extends Component {
 
     render() {
         let view;
-        if (this.state.user) {
+        console.log('user', this.state.user);
+        if (this.state.user === undefined) {
+            view =
+                <div className="center" style={{paddingTop: '10em'}}>
+                    loading...
+                </div>
+        } else if (this.state.user) {
+            // pushNotification.requestPermission();
             view = (
                 <HashRouter>
                     <div>

@@ -9,14 +9,14 @@ class Logout extends Component {
     }
 
     logout() {
-        firebase.auth().signOut().catch(function (error) {
-            Toast.show(error.message);
-        });
+        firebase.auth().signOut()
+            .then(() => (window.location = '/'))
+            .catch((error) => (Toast.show(error.message)));
     }
 
     render() {
         return (
-            <div className="row">
+            <div className="row center">
                 <h3>Saindo...</h3>
             </div>
         );
